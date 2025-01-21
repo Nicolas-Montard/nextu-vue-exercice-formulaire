@@ -5,7 +5,7 @@ export default{
   name: 'ProductsListView',
   props: {
     products: {
-      type: Array as () => { id: number; label: string; description: string; status: string }[],
+      type: Array as () => { id: number; label: string; description: string; quantity: number }[],
     },
   },
   setup(props) {
@@ -33,8 +33,8 @@ export default{
       <td>{{ productData.id }}</td>
       <td>{{ productData.label }}</td>
       <td>{{ productData.description }}</td>
-      <td v-if="productData.quantityData > 0"> Disponible</td>
-      <td v-if="productData.quantityData < 1"> Indisponible</td>
+      <td v-if="productData.quantity > 0"> Disponible</td>
+      <td v-if="productData.quantity < 1"> Indisponible</td>
     </tr>
   </tbody>
     </table>
